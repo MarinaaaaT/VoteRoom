@@ -12,7 +12,32 @@
 		9C222BC31F3222E3001EAE9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C222BC11F3222E3001EAE9A /* Main.storyboard */; };
 		9C222BC51F3222E3001EAE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C222BC41F3222E3001EAE9A /* Assets.xcassets */; };
 		9C222BC81F3222E3001EAE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C222BC61F3222E3001EAE9A /* LaunchScreen.storyboard */; };
+		9C222BD11F322372001EAE9A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C222BCF1F322372001EAE9A /* Realm.framework */; };
+		9C222BD21F322372001EAE9A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C222BCF1F322372001EAE9A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C222BD31F322372001EAE9A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C222BD01F322372001EAE9A /* RealmSwift.framework */; };
+		9C222BD41F322372001EAE9A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C222BD01F322372001EAE9A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C222BD71F322D27001EAE9A /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C222BD61F322D27001EAE9A /* VoteController.swift */; };
+		9C222BD91F323421001EAE9A /* HostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C222BD81F323421001EAE9A /* HostController.swift */; };
+		9C222BDB1F323432001EAE9A /* CreateRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C222BDA1F323432001EAE9A /* CreateRoomController.swift */; };
+		9C222BDD1F323442001EAE9A /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C222BDC1F323442001EAE9A /* ResultsController.swift */; };
+		9C222BDF1F3234A4001EAE9A /* VoteSubmittedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C222BDE1F3234A4001EAE9A /* VoteSubmittedController.swift */; };
+		9C222BE11F3234DA001EAE9A /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C222BE01F3234DA001EAE9A /* RatingController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9C222BD51F322372001EAE9A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C222BD41F322372001EAE9A /* RealmSwift.framework in Embed Frameworks */,
+				9C222BD21F322372001EAE9A /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9C222BBA1F3222E3001EAE9A /* VoteRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoteRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +47,14 @@
 		9C222BC41F3222E3001EAE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C222BC71F3222E3001EAE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C222BC91F3222E3001EAE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C222BCF1F322372001EAE9A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		9C222BD01F322372001EAE9A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		9C222BD61F322D27001EAE9A /* VoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		9C222BD81F323421001EAE9A /* HostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostController.swift; sourceTree = "<group>"; };
+		9C222BDA1F323432001EAE9A /* CreateRoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomController.swift; sourceTree = "<group>"; };
+		9C222BDC1F323442001EAE9A /* ResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
+		9C222BDE1F3234A4001EAE9A /* VoteSubmittedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteSubmittedController.swift; sourceTree = "<group>"; };
+		9C222BE01F3234DA001EAE9A /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C222BD31F322372001EAE9A /* RealmSwift.framework in Frameworks */,
+				9C222BD11F322372001EAE9A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +73,8 @@
 		9C222BB11F3222E3001EAE9A = {
 			isa = PBXGroup;
 			children = (
+				9C222BCF1F322372001EAE9A /* Realm.framework */,
+				9C222BD01F322372001EAE9A /* RealmSwift.framework */,
 				9C222BBC1F3222E3001EAE9A /* VoteRoom */,
 				9C222BBB1F3222E3001EAE9A /* Products */,
 			);
@@ -57,6 +94,12 @@
 				9C222BBD1F3222E3001EAE9A /* AppDelegate.swift */,
 				9C222BBF1F3222E3001EAE9A /* ViewController.swift */,
 				9C222BC11F3222E3001EAE9A /* Main.storyboard */,
+				9C222BE01F3234DA001EAE9A /* RatingController.swift */,
+				9C222BDE1F3234A4001EAE9A /* VoteSubmittedController.swift */,
+				9C222BD81F323421001EAE9A /* HostController.swift */,
+				9C222BDA1F323432001EAE9A /* CreateRoomController.swift */,
+				9C222BDC1F323442001EAE9A /* ResultsController.swift */,
+				9C222BD61F322D27001EAE9A /* VoteController.swift */,
 				9C222BC41F3222E3001EAE9A /* Assets.xcassets */,
 				9C222BC61F3222E3001EAE9A /* LaunchScreen.storyboard */,
 				9C222BC91F3222E3001EAE9A /* Info.plist */,
@@ -74,6 +117,7 @@
 				9C222BB61F3222E3001EAE9A /* Sources */,
 				9C222BB71F3222E3001EAE9A /* Frameworks */,
 				9C222BB81F3222E3001EAE9A /* Resources */,
+				9C222BD51F322372001EAE9A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C222BDF1F3234A4001EAE9A /* VoteSubmittedController.swift in Sources */,
+				9C222BD71F322D27001EAE9A /* VoteController.swift in Sources */,
+				9C222BE11F3234DA001EAE9A /* RatingController.swift in Sources */,
+				9C222BD91F323421001EAE9A /* HostController.swift in Sources */,
+				9C222BDD1F323442001EAE9A /* ResultsController.swift in Sources */,
+				9C222BDB1F323432001EAE9A /* CreateRoomController.swift in Sources */,
 				9C222BC01F3222E3001EAE9A /* ViewController.swift in Sources */,
 				9C222BBE1F3222E3001EAE9A /* AppDelegate.swift in Sources */,
 			);
@@ -260,10 +310,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VoteRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VoteRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,10 +329,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VoteRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.VoteRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
