@@ -9,22 +9,6 @@
 import UIKit
 import RealmSwift
 
-//MARK: Model
-final class VotingRoom: Object {
-    dynamic var id = 0
-    let items = List<Rating>()
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-}
-
-final class Rating: Object {
-    dynamic var userID = ""
-    dynamic var rating = 0
-    dynamic var votingRoomID = 0
-}
-
 class ViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var confirmRoom: UIButton!
