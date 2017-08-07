@@ -36,7 +36,7 @@ class CreateRoomController: UIViewController {
         // Do any additional setup after loading the view.
         
         //NOTE that until server is on remote server, we must change the server given below with the current IP
-        let url = URL(string: "http://[2600:1000:b12b:553c:349b:5cd1:1da0:8d9d]:9080")
+        let url = URL(string: "http://165.227.86.55:9080")
         
         //Authenticate user to create synchronized realm with
         let username = "VRHost"
@@ -78,7 +78,7 @@ class CreateRoomController: UIViewController {
         print(user)
         
         // Create the configuration
-        let syncServerURL = URL(string: "realm://[2600:1000:b12b:553c:349b:5cd1:1da0:8d9d]:9080/~/voteRealm")!
+        let syncServerURL = URL(string: "realm://165.227.86.55:9080/~/voteRealm")!
         let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: user, realmURL: syncServerURL))
         
         // Open the remote Realm
