@@ -13,7 +13,7 @@ class HostController: UIViewController {
     
     //MARK:Properties
     @IBOutlet weak var roomNumber: UILabel!
-    let realm = try! Realm()
+    var realm = try! Realm()
     var roomN:UInt32 = arc4random_uniform(9999)
     
     override func viewDidLoad() {
@@ -25,13 +25,13 @@ class HostController: UIViewController {
 //        try! realm.write {
 //            realm.deleteAll()
 //        }
-//        
+
 //        let vt = VotingRoom()
 //        vt.id = 9998
 //        try! realm.write {
 //            realm.add(vt)
 //        }
-//
+
         //check for that room number, while exists generate new random number
         //NOTE: THIS COULD CAUSE A PROBLEM IF ROOMS EXCEED LIMIT OF 9999 (unlikely) 
         //Note: If people close the app without closing the room, rooms will not be deleted
@@ -62,12 +62,16 @@ class HostController: UIViewController {
         let room = realm.objects(VotingRoom.self).filter(s)
         try! realm.write {
             realm.delete(room)
+            let s2 = "votingRoomID == " + roomNumber.text!
+            let ratings = realm.objects(Rating.self).filter(s2)
+            realm.delete(ratings)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultsController = segue.destination as? ResultsController {
             resultsController.roomNum = roomNumber.text
+            resultsController.realm = realm
         }
     }
     

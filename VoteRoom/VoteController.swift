@@ -15,7 +15,7 @@ class VoteController: UIViewController {
     @IBOutlet weak var ratingController: RatingController!
     @IBOutlet weak var roomShown: UILabel!
     var roomNumber: String = "id == -1"
-    let realm = try! Realm()
+    var realm = try! Realm()
     var roomExists = true
     var roomNum = "0"
     
@@ -41,11 +41,13 @@ class VoteController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ViewController {
             viewController.roomExists = roomExists
+            viewController.realm = realm
         }
         
         if let voteSubmitted = segue.destination as? VoteSubmittedController{
             voteSubmitted.roomNum = roomNum
             voteSubmitted.rating = ratingController.rating
+            voteSubmitted.realm = realm
         }
     }
 

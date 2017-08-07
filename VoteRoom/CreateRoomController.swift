@@ -27,31 +27,27 @@ final class Rating: Object {
 
 class CreateRoomController: UIViewController {
     
+    //MARK: Properties
+    var realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         //NOTE that until server is on remote server, we must change the server given below with the current IP
-        let url = URL(string: "http://[2600:1000:b10e:a7da:90ad:d3c1:56b2:6512]:9080")
+        let url = URL(string: "http://[2600:1000:b12b:553c:349b:5cd1:1da0:8d9d]:9080")
         
         //Authenticate user to create synchronized realm with
-        let username = "VotingAppHost"
+        let username = "VRHost"
         let usernameCredentials = SyncCredentials.usernamePassword(username: username, password: "password")
         
         SyncUser.logIn(with: usernameCredentials,
                        server: url!) { user, error in
                         //if user exists, open synchronized Realm with this user
                         if let user = user {
-                            // can now open a synchronized Realm with this user
-                            let syncServerURL = URL(string: "realm://[2600:1000:b10e:a7da:90ad:d3c1:56b2:6512]:9080/~/voteRealm")!
-                            let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: user, realmURL: syncServerURL))
-                            
-                            // Open the remote Realm
-                            let realm = try! Realm(configuration: config)
-                            // Any changes made to this Realm will be synced across all devices!
+                            print(user)
                         }
-                            
                         //if user DNE, register a new user to host the synchronized realm
                         else if let error = error {
                             print("User DNE error" + error.localizedDescription)
@@ -64,17 +60,9 @@ class CreateRoomController: UIViewController {
                                            server: url!) { user, error in
                                             //if the user did not previously exist, we need to make a new realm to work in
                                             if let user = user {
-                                                // can now open a synchronized Realm with this user
-                                                // Create the configuration
-                                                let syncServerURL = URL(string: "realm://[2600:1000:b10e:a7da:90ad:d3c1:56b2:6512]:9080/~/voteRealm")!
-                                                let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: user, realmURL: syncServerURL))
-                                                
-                                                // Open the remote Realm
-                                                let realm = try! Realm(configuration: config)
+                                                // Can now open a synchronized Realm with this user
                                                 // Any changes made to this Realm will be synced across all devices!
-                                                
-                                                realm.create(VotingRoom.self)
-                                                realm.create(Rating.self)
+                                                print(user)
                                             }
                                             //You shouldn't run into an error but it is necessary for method
                                             else if let error = error {
@@ -89,33 +77,26 @@ class CreateRoomController: UIViewController {
         let user = SyncUser.current!
         print(user)
         
-        let all = SyncUser.all
-        while let user = all.next(){
-            user.logout()
-        }
+        // Create the configuration
+        let syncServerURL = URL(string: "realm://[2600:1000:b12b:553c:349b:5cd1:1da0:8d9d]:9080/~/voteRealm")!
+        let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: user, realmURL: syncServerURL))
         
+        // Open the remote Realm
+        realm = try! Realm(configuration: config)
         
-        
-        
-//        let url2 = URL(string:"realm://[2600:1000:b10e:a7da:90ad:d3c1:56b2:6512]:9080/~/voteRealm")
-        let realm = try! Realm()
-//
 //        let myUsername = UIDevice.current.identifierForVendor!.uuidString
-//        let rating = 5
-//        let votingroomID = 10
-//        
-//        let r = Rating()
-//        r.userID = myUsername
-//        r.rating = rating
-//        r.votingRoomID = votingroomID
-//        try! realm.write {
-//            realm.add(r)
-//        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? ViewController {
+            viewController.realm = realm
+        }
         
+        if let hostController = segue.destination as? HostController {
+            hostController.realm = realm
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

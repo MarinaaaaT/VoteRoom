@@ -10,10 +10,11 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController {
+    //MARK: Properties
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var confirmRoom: UIButton!
     @IBOutlet weak var roomNum: UITextField!
-    let realm = try! Realm()
+    var realm = try! Realm()
     var roomExists = true
 
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
                 }
             }
             voteController.roomNumber = roomNumber
+            voteController.realm = realm
         }
     }
     

@@ -17,13 +17,13 @@ class ResultsController: UIViewController {
     @IBOutlet weak var fourStar: UILabel!
     @IBOutlet weak var fiveStar: UILabel!
     var roomNum: String?
-    let realm = try! Realm()
+    var realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // for testing roomNum! is replaced with "9998"
-        var s = "votingRoomID == " + "9998"
+        var s = "votingRoomID == " + roomNum!
         let room = realm.objects(Rating.self).filter(s)
         
         s = "rating == 1"
@@ -67,7 +67,7 @@ class ResultsController: UIViewController {
                 realm.delete(room)
             }
             hostController.roomN = UInt32(roomNum!)!
-            
+            hostController.realm = realm
         }
     }
     

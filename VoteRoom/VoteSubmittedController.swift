@@ -15,7 +15,7 @@ class VoteSubmittedController: UIViewController {
     var resubmit = false
     var roomNum = "-1"
     var rating = -1
-    let realm = try! Realm()
+    var realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,7 @@ class VoteSubmittedController: UIViewController {
         if let voteController = segue.destination as? VoteController {
             voteController.roomNum = roomNum
             voteController.roomNumber = "id == " + roomNum
+            voteController.realm = realm
         }
     }
 

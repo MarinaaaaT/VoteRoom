@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiT-xl-H5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.599999999999994" y="732.68365817091455"/>
+            <point key="canvasLocation" x="70" y="851"/>
         </scene>
         <!--Results Controller-->
         <scene sceneID="YpU-Lp-Kh5">
@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaM-bt-Rim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="733"/>
+            <point key="canvasLocation" x="804" y="851"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -309,7 +309,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ph3-UZ-e26" customClass="RatingController" customModule="VoteRoom" customModuleProvider="target">
-                                <rect key="frame" x="87" y="297" width="200" height="72"/>
+                                <rect key="frame" x="16" y="297" width="343" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="####" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-7a-3bx">
@@ -388,7 +388,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="wog-LG-JV0"/>
         <segue reference="5kt-qp-zUl"/>
-        <segue reference="pNM-CT-gur"/>
+        <segue reference="Kbx-SL-1dO"/>
         <segue reference="wqx-kL-zQs"/>
     </inferredMetricsTieBreakers>
 </document>
