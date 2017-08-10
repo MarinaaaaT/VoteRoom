@@ -62,9 +62,12 @@ class ResultsController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let hostController = segue.destination as? HostController {
             let s = "id == " + roomNum!
+            let r = "votingRoomID == " + roomNum!
             let room = realm.objects(VotingRoom.self).filter(s)
+            let ratings = realm.objects(Rating.self).filter(r)
             try! realm.write {
                 realm.delete(room)
+                realm.delete(ratings)
             }
             hostController.roomN = UInt32(roomNum!)!
             hostController.realm = realm

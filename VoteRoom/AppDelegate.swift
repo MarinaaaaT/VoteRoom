@@ -40,14 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        //Logout all users
-        let all = SyncUser.all
-        for user in all{
-            user.value.logOut()
-        }
-        print("yay")
     }
-
 
 }
 

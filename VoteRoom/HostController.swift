@@ -37,7 +37,6 @@ class HostController: UIViewController {
         //Note: If people close the app without closing the room, rooms will not be deleted
         var randomNum:UInt32 = roomN
         roomNumber.text! = String(roomN)
-        print(roomNumber.text! + "   " + String(roomN))
         var s = "id == " + roomNumber.text!
         var room = realm.objects(VotingRoom.self).filter(s)
         
