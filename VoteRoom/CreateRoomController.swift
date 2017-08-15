@@ -11,7 +11,7 @@ import RealmSwift
 //MARK: Model
 final class VotingRoom: Object {
     dynamic var id = 0
-    let items = List<Rating>()
+    dynamic var question = 1
     
     override static func primaryKey() -> String? {
         return "id"

@@ -14,6 +14,7 @@ class VoteController: UIViewController {
     //MARK:Properties
     @IBOutlet weak var ratingController: RatingController!
     @IBOutlet weak var roomShown: UILabel!
+    @IBOutlet weak var voteButton: UIButton!
     var roomNumber: String = "id == -1"
     var realm = try! Realm()
     var roomExists = true
@@ -26,12 +27,15 @@ class VoteController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
         let room = realm.objects(VotingRoom.self).filter(roomNumber)
         if(room.count != 1){
             roomExists = false
             performSegue(withIdentifier: "backToMain", sender: self)
         }
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

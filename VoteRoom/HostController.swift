@@ -50,6 +50,7 @@ class HostController: UIViewController {
         //when roomnumber is chosen, create room
         let vr = VotingRoom()
         vr.id = Int(randomNum)
+        vr.question = 1
         try! realm.write {
             realm.add(vr)
         }

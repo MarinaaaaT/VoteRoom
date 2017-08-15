@@ -16,7 +16,10 @@ class ResultsController: UIViewController {
     @IBOutlet weak var threeStar: UILabel!
     @IBOutlet weak var fourStar: UILabel!
     @IBOutlet weak var fiveStar: UILabel!
+    @IBOutlet weak var startEndButton: UIButton!
+    @IBOutlet weak var qNum: UILabel!
     var roomNum: String?
+    var voteOn = true
     var realm = try! Realm()
     
     override func viewDidLoad() {
@@ -54,6 +57,27 @@ class ResultsController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func startEndVote(_ sender: UIButton) {
+        let r = "id == " + roomNum!
+        let room = realm.objects(VotingRoom.self).filter(r)
+        voteOn = !voteOn
+        //when askAnotherQuestion is pressed, show end vote and add 1 to question number
+        if(voteOn){
+            startEndButton.setTitle("End Vote", for: .normal)
+            qNum.text = String(room.first!.question)
+        }
+        //when endVote is pressed, show askanother and delete existing ratings
+        else{
+            startEndButton.setTitle("Ask Another Question", for: .normal)
+            try! realm.write {
+                room.first!.question += 1
+                let s = "votingRoomID == " + roomNum!
+                let ratings = realm.objects(Rating.self).filter(s)
+                realm.delete(ratings)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
