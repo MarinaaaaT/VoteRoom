@@ -250,6 +250,7 @@
                         <outlet property="fourStar" destination="NzY-1u-NVY" id="Fhd-R1-GyN"/>
                         <outlet property="oneStar" destination="RWe-M0-ujZ" id="g7s-VW-JP5"/>
                         <outlet property="qNum" destination="iEy-Pt-uLc" id="qD0-BA-oh3"/>
+                        <outlet property="roomLabel" destination="LQS-ZC-CTA" id="Yig-Ix-tNu"/>
                         <outlet property="startEndButton" destination="wMb-ww-tGb" id="EGN-RS-vax"/>
                         <outlet property="threeStar" destination="UpO-BV-SJk" id="p4e-D0-qXQ"/>
                         <outlet property="twoStar" destination="m3Q-s7-2fl" id="vRl-x3-pgc"/>
@@ -341,7 +342,7 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" identifier="backToMain" id="5kt-qp-zUl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgg-yN-xDs">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgg-yN-xDs">
                                 <rect key="frame" x="124" y="380" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="That's what I think"/>
@@ -367,28 +368,28 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5721" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-7a-3bx">
                                 <rect key="frame" x="309" y="62" width="50" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-sG-dZ3">
                                 <rect key="frame" x="309" y="33" width="50" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdf-ox-TxZ">
                                 <rect key="frame" x="232" y="62" width="69" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asr-W1-U0C">
                                 <rect key="frame" x="232" y="33" width="69" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -397,6 +398,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="questionShown" destination="Dx9-sG-dZ3" id="UG1-s5-LdB"/>
                         <outlet property="ratingController" destination="ph3-UZ-e26" id="2df-RG-IDL"/>
                         <outlet property="roomShown" destination="m8w-7a-3bx" id="5fW-mS-gIQ"/>
                         <outlet property="voteButton" destination="Qgg-yN-xDs" id="Ui8-QL-Ywx"/>
@@ -459,9 +461,9 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sVD-AS-DOA"/>
         <segue reference="p80-pL-WeM"/>
-        <segue reference="5kt-qp-zUl"/>
+        <segue reference="sVD-AS-DOA"/>
         <segue reference="Kbx-SL-1dO"/>
+        <segue reference="5kt-qp-zUl"/>
     </inferredMetricsTieBreakers>
 </document>

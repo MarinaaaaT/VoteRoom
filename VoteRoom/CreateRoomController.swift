@@ -12,6 +12,7 @@ import RealmSwift
 final class VotingRoom: Object {
     dynamic var id = 0
     dynamic var question = 1
+    dynamic var votingOn = false
     
     override static func primaryKey() -> String? {
         return "id"
@@ -39,20 +40,19 @@ class CreateRoomController: UIViewController {
         for user in all{
             user.value.logOut()
         }
-        print("yay")
 
         
         let url = URL(string: "http://165.227.86.55:9080")
-        let test = UIApplication.shared.canOpenURL(url!)
-        print(test)
         
         //Authenticate user to create synchronized realm with
         let username = "VRHost"
         let usernameCredentials = SyncCredentials.usernamePassword(username: username, password: "password")
-        
-        
-        SyncUser.logIn(with: usernameCredentials,
-                       server: url!) { user, error in
+        login(userCred: usernameCredentials, url: url!, username: username)
+    }
+    
+    func login(userCred: SyncCredentials, url: URL, username: String){
+        SyncUser.logIn(with: userCred,
+                       server: url) { user, error in
                         print("This statement will not print")
                         //if user exists, open synchronized Realm with this user
                         if let user = user {
@@ -67,7 +67,7 @@ class CreateRoomController: UIViewController {
                             
                             // log in new user
                             SyncUser.logIn(with: newUsernameCredentials,
-                                           server: url!) { user, error in
+                                           server: url) { user, error in
                                             //if the user did not previously exist, we need to make a new realm to work in
                                             if let user = user {
                                                 // Can now open a synchronized Realm with this user
@@ -85,8 +85,6 @@ class CreateRoomController: UIViewController {
                             print("NOT DOING ANYTHING")
                         }
         }
-        //        let myUsername = UIDevice.current.identifierForVendor!.uuidString
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

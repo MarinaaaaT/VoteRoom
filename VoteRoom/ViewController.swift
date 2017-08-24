@@ -48,6 +48,7 @@ class ViewController: UIViewController {
             voteController.roomNumber = roomNumber
             voteController.realm = realm
         }
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

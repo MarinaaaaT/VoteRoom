@@ -72,6 +72,11 @@ class HostController: UIViewController {
         if let resultsController = segue.destination as? ResultsController {
             resultsController.roomNum = roomNumber.text
             resultsController.realm = realm
+            let s = "id == " + roomNumber.text!
+            try! realm.write {
+                let room = realm.objects(VotingRoom.self).filter(s)
+                room.first!.votingOn = true
+            }
         }
     }
     
